@@ -14,8 +14,6 @@ services:
   backend:
     image: bobah2060/kittygram_backend
     env_file: .env
-    ports:
-      - "8080:8000"
     volumes:
       - static:/backend_static
       - media:/backend_media
