@@ -9,8 +9,7 @@ WORKDIR /app
 
 RUN adduser --disabled-password --gecos '' www-data
 
-RUN mkdir -p /backend_media /app/collected_static && \
-    chown -R www-data:www-data /backend_media /app/collected_static
+RUN mkdir -p /backend_media /app/collected_static
 # Дальнейшие инструкции будут выполняться в директории /app
 
 RUN pip install gunicorn==23.0.0
@@ -27,6 +26,5 @@ RUN pip install -r requirements.txt --no-cache-dir
 # в текущую рабочую директорию образа — /app.
 COPY . .
 
-USER www-data
 # При старте контейнера запустить сервер разработки.
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "kittygram_backend.wsgi"]
