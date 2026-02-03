@@ -7,8 +7,6 @@ FROM python:3.9
 # Название директории может быть любым.
 WORKDIR /app
 
-RUN adduser --disabled-password --gecos '' www-data
-
 RUN mkdir -p /backend_media /app/collected_static
 # Дальнейшие инструкции будут выполняться в директории /app
 
