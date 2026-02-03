@@ -13,7 +13,7 @@ services:
     image: bobah2060/kittygram_backend
     env_file: .env
     volumes:
-      - static:/app/staticfiles/
+      - static:/app/collected_static
       - media:/app/media
     depends_on:
       - db
