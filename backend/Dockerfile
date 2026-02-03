@@ -7,7 +7,7 @@ FROM python:3.9
 # Название директории может быть любым.
 WORKDIR /app
 
-RUN mkdir -p /backend_media /app/collected_static
+RUN mkdir -p /backend_media
 # Дальнейшие инструкции будут выполняться в директории /app
 
 RUN pip install gunicorn==23.0.0
