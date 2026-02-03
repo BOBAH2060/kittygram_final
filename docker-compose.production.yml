@@ -9,8 +9,9 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
+    networks:
+      - kittygram-net
   backend:
-    user: "www-data"
     image: bobah2060/kittygram_backend
     env_file: .env
     ports:
@@ -19,6 +20,8 @@ services:
       - static:/backend_static
       - media:/backend_media
     init: true 
+    networks:
+      - kittygram-net
     depends_on:
       - db
   frontend:
@@ -27,12 +30,15 @@ services:
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
+    networks:
+      - kittygram-net
   gateway:
-    user: "nginx"
     image: bobah2060/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
+    networks:
+      - kittygram-net
     depends_on:
       - backend
     volumes:
