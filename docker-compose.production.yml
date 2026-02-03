@@ -10,6 +10,7 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
+    user: "www-data"
     image: bobah2060/kittygram_backend
     env_file: .env
     ports:
@@ -26,6 +27,7 @@ services:
     volumes:
       - static:/frontend_static
   gateway:
+    user: "nginx"
     image: bobah2060/kittygram_gateway
     env_file: .env
     ports:
