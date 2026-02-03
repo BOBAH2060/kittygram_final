@@ -18,6 +18,7 @@ services:
     volumes:
       - static:/backend_static
       - media:/backend_media
+    init: true 
     depends_on:
       - db
   frontend:
