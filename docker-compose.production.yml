@@ -44,3 +44,7 @@ services:
     volumes:
       - static:/staticfiles
       - media:/mediafiles
+
+networks:
+  kittygram-net:
+    driver: bridge
