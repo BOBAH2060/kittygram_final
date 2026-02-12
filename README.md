@@ -126,9 +126,8 @@ docker compose -f docker-compose.production.yml up -d
 Настройте сеть:
 
 Настройте Nginx или Caddy для проксирования запросов.
-Настройте HTTPS (рекомендуется использовать Certbot для получения сертификатов Let's Encrypt).
-Проект будет доступен по адресу: https://kittygramstudents.hopto.org
 
+Настройте HTTPS (рекомендуется использовать Certbot для получения сертификатов Let's Encrypt).
 
 Статус проекта (Бейдж GitHub Actions)
 ![GitHub Actions](https://github.com/BOBAH2060/kittygram_final/actions/workflows/main.yml/badge.svg)
